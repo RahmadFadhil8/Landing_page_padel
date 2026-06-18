@@ -1,5 +1,5 @@
 <template>
-    <nav class="fixed flex justify-between items-center px-6 py-2 mt-2 left-1/2 -translate-x-1/2 w-5xl rounded-xl bg-neutral border-gray-300 border shadow-lg">
+    <nav class="fixed flex justify-between items-center px-6 py-2 mt-2 left-1/2 -translate-x-1/2 w-5xl rounded-xl bg-neutral border-gray-300 border shadow-lg z-50">
         <div>
             <img src="~/assets/images/navbar.png" alt="logo Padel Booking" class="w-auto h-12">
         </div>
@@ -12,7 +12,7 @@
         </ul>
         <div>
             <UiButton>
-                <NuxtLink to="/statis">Login</NuxtLink>
+                <NuxtLink to="/auth/login">Login</NuxtLink>
             </UiButton>
         </div>
     </nav>
