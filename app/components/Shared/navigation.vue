@@ -5,9 +5,9 @@
         </div>
         <ul class="flex gap-6">
             <li><NuxtLink to="/" class="hover:text-hover-primary">Beranda</NuxtLink></li>
-            <li><NuxtLink to="/" class="hover:text-hover-primary">lapangan</NuxtLink></li>
+            <li><NuxtLink to="/lapangan" class="hover:text-hover-primary">lapangan</NuxtLink></li>
             <li><NuxtLink to="/" class="hover:text-hover-primary">Lokasi</NuxtLink></li>
-            <li><NuxtLink to="/" class="hover:text-hover-primary">FAQ</NuxtLink></li>
+            <li><NuxtLink to="/#faq" class="hover:text-hover-primary">FAQ</NuxtLink></li>
             <li><NuxtLink to="/" class="hover:text-hover-primary">Tentang Kami</NuxtLink></li>
         </ul>
         <div>

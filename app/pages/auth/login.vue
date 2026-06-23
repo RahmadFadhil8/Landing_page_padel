@@ -1,9 +1,3 @@
-<script setup>
-definePageMeta({
-  layout: 'auth'
-})
-</script>
-
 <template>
   <section class="flex items-center justify-center min-h-screen bg-gray-100 pt-24 pb-24">
     <div class="flex shadow-xl rounded-2xl overflow-hidden w-215 max-w-full bg-white">
@@ -29,7 +23,12 @@ definePageMeta({
 
             <div class="mb-4">
               <label class="block text-sm font-medium text-gray-700 mb-1">Alamat Email</label>
-              <UiFormEmail/>
+              <UiInput
+              v-model="email"
+              type="email"
+              placeholder="nama@email.com"
+              :icon="emailIcon"
+              />
             </div>
 
             <!-- password -->
@@ -40,11 +39,16 @@ definePageMeta({
                   Lupa Password?
                 </NuxtLink>
               </div>
-              <UiFormPass/>
+              <UiInput
+              v-model="password"
+              type="password"
+              placeholder="••••••••"
+              :icon="passIcon"
+              />
             </div>
 
             <!-- tombol masuk -->
-            <UiButton class="w-full mb-4">Masuk</UiButton>
+            <UiButton full class="mb-4">Masuk</UiButton>
 
             <!-- devider -->
             <div class="flex items-center gap-3 mb-4">
@@ -54,9 +58,9 @@ definePageMeta({
             </div>
 
             <!-- tombol google -->
-            <UiButtonOutline class="mb-6">
+            <UiButton variant="outline" full class="mb-6">
               <img src="~/assets/icon/google.svg" alt="" srcset="" class="h-5 w-5"> Google
-            </UiButtonOutline>
+            </UiButton>
 
             <!-- daftar -->
             <p class="text-sm text-center text-gray-600">
@@ -67,3 +71,15 @@ definePageMeta({
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: 'auth'
+})
+
+import emailIcon from '~/assets/icon/email-hitam.svg'
+import passIcon from '~/assets/icon/eye.svg'
+
+const email = ref('')
+const password = ref('')
+</script>

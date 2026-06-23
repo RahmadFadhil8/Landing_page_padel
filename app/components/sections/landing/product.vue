@@ -6,14 +6,14 @@
                 <p class="text-gray-400">Pilih Lapangan terbaik dengan fasilitas premium</p>
             </div>
             <div class="flex items-end text-gray-400">
-                <NuxtLink to="/" class="flex gap-2">
+                <NuxtLink to="/" class="flex gap-2 hover:underline">
                     lihat semua
-                    <img src="~/assets/icon/link.svg" alt="" class="h-5 w-5 mt-0.5 opacity-40">
+                    <img src="~/assets/icon/link.svg" alt="" class="h-5 w-5 mt-0.5 opacity-40 hover:underline">
                 </NuxtLink>
             </div>
         </div>
         <div class="flex gap-4">
-            <UiCard
+            <CardsCourtProduct
             v-for="nilai in Data"
             :key="nilai.judul"
             :lapangan="nilai"

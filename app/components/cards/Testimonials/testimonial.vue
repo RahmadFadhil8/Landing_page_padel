@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <UiCard>
         <div class="rounded-2xl shadow-xl bg-white h-full">
             <div class="flex flex-col justify-between h-full gap-4 px-10 py-10">
                 <div class="flex gap-1">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </UiCard>
 </template>
 
 <script setup lang="ts">

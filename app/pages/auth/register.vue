@@ -1,9 +1,3 @@
-<script setup>
-definePageMeta({
-  layout: 'auth'
-})
-</script>
-
 <template>
   <section class="flex items-center justify-center min-h-screen bg-gray-100 pt-24 pb-24">
     <div class="flex shadow-xl rounded-2xl overflow-hidden w-215 max-w-full bg-white">
@@ -30,23 +24,43 @@ definePageMeta({
 
             <div class="mb-4">
               <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
-              <UiFormNama/>
+              <UiInput
+              v-model="nama"
+              type="text"
+              placeholder="Masukkan Nama Lengkap"
+              :icon="namaIcon"
+              />
             </div>
 
             <div class="mb-4">
               <label class="block text-sm font-medium text-gray-700 mb-1">Alamat Email</label>
-              <UiFormEmail/>
+              <UiInput
+              v-model="email"
+              type="email"
+              placeholder="nama@email.com"
+              :icon="emailIcon"
+              />
             </div>
 
             <div class="mb-4">
               <label class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
-              <UiFormTel/>
+              <UiInput
+              v-model="tel"
+              type="tel"
+              placeholder="0812xxxx"
+              :icon="telIcon"
+              />
             </div>
 
             <!-- password -->
             <div class="mb-6">
               <label class="text-sm font-medium text-gray-700">Kata Sandi</label>
-              <UiFormPass/>
+              <UiInput
+              v-model="password"
+              type="password"
+              placeholder="Min. 8 Karakter"
+              :icon="passIcon"
+              />
             </div>
 
             <div class="flex gap-2 mb-6">
@@ -55,7 +69,7 @@ definePageMeta({
             </div>
 
             <!-- tombol masuk -->
-            <UiButton class="w-full mb-4">Daftar Sekarang</UiButton>
+            <UiButton full class="mb-4">Daftar Sekarang</UiButton>
 
             <!-- devider -->
             <div class="flex items-center gap-3 mb-4">
@@ -65,9 +79,9 @@ definePageMeta({
             </div>
 
             <!-- tombol google -->
-            <UiButtonOutline class="mb-6">
+            <UiButton variant="outline" full class="mb-6">
               <img src="~/assets/icon/google.svg" alt="" srcset="" class="h-5 w-5">Daftar dengan Google
-            </UiButtonOutline>
+            </UiButton>
 
             <!-- daftar -->
             <p class="text-sm text-center text-gray-600">
@@ -78,3 +92,19 @@ definePageMeta({
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: 'auth'
+})
+
+import emailIcon from '~/assets/icon/email-hitam.svg'
+import passIcon from '~/assets/icon/eye.svg'
+import namaIcon from '~/assets/icon/user.svg'
+import telIcon from '~/assets/icon/phoneHitam.svg'
+
+const email = ref('')
+const password = ref('')
+const nama = ref('')
+const tel = ref('')
+</script>

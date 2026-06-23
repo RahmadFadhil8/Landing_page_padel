@@ -17,4 +17,21 @@ type Faq = {
     pertanyaan:string;
     jawaban:string;
 }
-export type {Lapangan, Testimoni, Faq}
+
+type Statistik = {
+    judul:string;
+    jumlah:number
+}
+
+type TimeSlot = {
+    start:string;
+    end:string;
+}
+
+type DaftarBooking = {
+    user: string;
+    court:string;
+    timeSlot: TimeSlot;
+    status: "Pending" | "Approved";
+}
+export type {Lapangan, Testimoni, Faq, Statistik, DaftarBooking}

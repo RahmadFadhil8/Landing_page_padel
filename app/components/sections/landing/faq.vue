@@ -1,8 +1,9 @@
 <template>
-    <section class="px-36 my-40">
+    <section class="px-36 my-40" id="faq">
         <div class="flex flex-col items-center justify-center gap-8">
             <h4 class="font-bold text-center text-3xl">Pertanyaan Populer</h4>
             <div class="w-full max-w-4xl flex flex-col gap-4">
+                
                 <div v-for="(faq, index) in DataFaq" :key="index" class="border rounded-xl bg-white shadow-sm overflow-hidden transition-colors duration-300 border-gray-200">
                     <button @click="TombolFAQ(index)" class="flex justify-between w-full px-6 py-4 cursor-pointer hover:bg-gray-50 transition-colors">
                         <h3>{{ faq.pertanyaan }}</h3>

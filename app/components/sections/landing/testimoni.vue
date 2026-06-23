@@ -4,14 +4,15 @@
             <h4 class="font-bold text-center text-3xl pt-6">Apa Kata Mereka?</h4>
         </div>
         <div class="grid grid-cols-3 gap-4 pb-10 auto-rows-fr">
-            <UiCardTestimoni
-            v-for="nilai in Data"
-            :key="nilai.namaUser"
-            :testimoni="nilai"
+            <CardsTestimonialsTestimonial
+            v-for="item in Data"
+            :key="item.namaUser"
+            :testimoni="item"
             />
         </div>
     </section>
 </template>
+
 <script setup lang="ts">
 import type { Testimoni } from '~/types';
 import gambar1 from "~/assets/images/pofil (1).jpg"

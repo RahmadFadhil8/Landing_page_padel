@@ -1,7 +1,7 @@
 <template>
   <div>
-    <LayoutNavigation/>
+    <SharedNavigation/>
     <slot />
-    <LayoutFooter/>
+    <SharedFooter/>
   </div>
 </template>
