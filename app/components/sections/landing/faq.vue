@@ -1,5 +1,5 @@
 <template>
-    <section class="px-36 my-40" id="faq">
+    <section class="px-36 my-40 scroll-mt-28" id="faq">
         <div class="flex flex-col items-center justify-center gap-8">
             <h4 class="font-bold text-center text-3xl">Pertanyaan Populer</h4>
             <div class="w-full max-w-4xl flex flex-col gap-4">

@@ -21,7 +21,11 @@
                             <p class="font-bold text-lg">Rp {{ lapangan.harga }}</p>
                         </div>
                         <div>
-                            <Button>Pesan</Button>
+                            <UiButton>
+                                <NuxtLink :to="`/lapangan/${lapangan.id}`">
+                                    Pesan
+                                </NuxtLink>
+                            </UiButton>
                         </div>
                     </div>
                 </div>
@@ -31,7 +35,6 @@
 
 <script setup lang="ts">
 import type {Lapangan} from "~/types"
-import Button from "~/components/ui/button.vue";
 defineProps<{
     lapangan:Lapangan
 }>()

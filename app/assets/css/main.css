@@ -27,3 +27,7 @@
     --color-border-warning:#D97706;
     --color-border-error:#DC2626;    
 }
+
+html {
+  scroll-behavior: smooth;
+}

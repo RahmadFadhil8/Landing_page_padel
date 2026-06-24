@@ -1,9 +1,12 @@
 type Lapangan = {
+    id:number;
     gambar:string;
     judul:string;
     alamat:string;
     rating:string;
     harga:number;
+    deskripsi: string;
+    fasilitas: string[];
 }
 
 type Testimoni = {
