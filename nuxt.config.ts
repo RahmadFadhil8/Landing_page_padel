@@ -9,5 +9,8 @@ export default defineNuxtConfig({
       plugins: [
         tailwindcss(),
     ]
+  },
+  runtimeConfig: {
+    mongodbUri: process.env.NUXT_MONGODB_URI
   }
 })

@@ -25,7 +25,7 @@
             <div class="mb-4">
               <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
               <UiInput
-              v-model="nama"
+              v-model="form.nama"
               type="text"
               placeholder="Masukkan Nama Lengkap"
               :icon="namaIcon"
@@ -35,7 +35,7 @@
             <div class="mb-4">
               <label class="block text-sm font-medium text-gray-700 mb-1">Alamat Email</label>
               <UiInput
-              v-model="email"
+              v-model="form.email"
               type="email"
               placeholder="nama@email.com"
               :icon="emailIcon"
@@ -45,7 +45,7 @@
             <div class="mb-4">
               <label class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
               <UiInput
-              v-model="tel"
+              v-model="form.tel"
               type="tel"
               placeholder="0812xxxx"
               :icon="telIcon"
@@ -56,7 +56,7 @@
             <div class="mb-6">
               <label class="text-sm font-medium text-gray-700">Kata Sandi</label>
               <UiInput
-              v-model="password"
+              v-model="form.password"
               type="password"
               placeholder="Min. 8 Karakter"
               :icon="passIcon"
@@ -69,7 +69,7 @@
             </div>
 
             <!-- tombol masuk -->
-            <UiButton full class="mb-4">Daftar Sekarang</UiButton>
+            <UiButton full class="mb-4 cursor-pointer" @click="handleRegister">Daftar Sekarang</UiButton>
 
             <!-- devider -->
             <div class="flex items-center gap-3 mb-4">
@@ -102,9 +102,32 @@ import emailIcon from '~/assets/icon/email-hitam.svg'
 import passIcon from '~/assets/icon/eye.svg'
 import namaIcon from '~/assets/icon/user.svg'
 import telIcon from '~/assets/icon/phoneHitam.svg'
+import { useAuth } from '~/composables/useAuth'
+import type { RegisterDto } from '~/types/auth'
+
+const { register } = useAuth()
 
 const email = ref('')
 const password = ref('')
 const nama = ref('')
 const tel = ref('')
+
+const form = reactive<RegisterDto>({
+  nama: '',
+  email: '',
+  tel: '',
+  password: ''
+})
+
+const handleRegister = async () => {
+  try {
+    const response = await register(form)
+    
+    if (response.success) {
+      await navigateTo('/auth/login')
+    }
+  } catch (error: any) {
+    alert(error.message)
+  }
+}
 </script>
